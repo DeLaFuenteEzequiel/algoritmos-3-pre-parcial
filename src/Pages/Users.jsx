@@ -10,13 +10,16 @@ const Users = () => {
     const [maxPage, setMaxPage] = useState(0);
     const [tableInfo, setTableInfo] = useState([]);
 
+    const [editData,setEditData] = useState({user_name:'',id:null});
+    const [isOnEdit, setisOnEdit] = useState();
+
 
     const loadTableData = async () => {
         let rsp = await searchUsers(searchData);
 
         if(rsp?.Error === false){
-            setTableInfo(rsp.Data.data);
-            setMaxPage(rsp.Data.last_page);
+            setTableInfo(rsp.Data.data);//info tabla
+            setMaxPage(rsp.Data.last_page);  //cantidad de paginas
         }else{
             window.alert('No se pudo cargar la informacion');
         }

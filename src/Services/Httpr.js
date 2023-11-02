@@ -1,9 +1,9 @@
-const backendurl = "http://localhost:8000/api/";
+const backendurl = "http://192.168.0.69:3001/api/";
 
 export default backendurl;
 
 
-export async function POSTU(url, file){
+export async function POSTU(url, file){ //POST De archivos
 
     let data = new FormData();
     data.append('file', file);

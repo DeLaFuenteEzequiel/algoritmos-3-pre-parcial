@@ -14,3 +14,7 @@ export const searchUsers = async (search_params) => {
 
     return rsp;
 }
+
+export const updateUsers = async (update_user_data) =>{
+    
+} 

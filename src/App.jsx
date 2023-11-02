@@ -10,13 +10,13 @@ import CreateUser from './Pages/CreateUser.jsx';
 const App = () => {
 
   const [availableRoutes, setvAilableRoutes] = useState([]);
-  const [isLoged, setIsLoged] = useState(false);
+  const [isLoged, setIsLoged] = useState(false); //booleano
 
 
-
+  
   useEffect(() => {
     if(localStorage.getItem('jwt')){
-      setvAilableRoutes(
+      setvAilableRoutes(  //array de rutas que es guardado en el hook 
         [
           {
             path:'/users',
@@ -30,7 +30,7 @@ const App = () => {
       );
     }
     
-  }, [isLoged]);
+  }, [isLoged]); //trigger(disparador) 
 
   return (
     <BrowserRouter>
